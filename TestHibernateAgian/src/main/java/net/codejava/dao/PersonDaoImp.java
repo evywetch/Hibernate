@@ -4,13 +4,15 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import net.codejava.domain.Person;
+import net.codejava.domain.Boss;
 
 public class PersonDaoImp {
-
+	
+	
+/*
 	EntityManagerFactory factory = Persistence.createEntityManagerFactory("testHibernate");
 
-	public void createPerson(Person person) {
+	public void createPerson(Boss person) {
 
 		EntityManager em = factory.createEntityManager();
 		em.getTransaction().begin();
@@ -22,13 +24,13 @@ public class PersonDaoImp {
 
 	}
 
-	public Person getPerson(long id) {
+	public Boss getPerson(long id) {
 
 		EntityManager em = factory.createEntityManager();
 
 		em.clear(); // clear persistence context from EntityManager
 
-		Person person = em.find(Person.class, id);
+		Boss person = em.find(Boss.class, id);
 
 		System.out.println(person.toString());
 
@@ -39,7 +41,7 @@ public class PersonDaoImp {
 
 	}
 
-	public void updatePerson(Person person) {
+	public void updatePerson(Boss person) {
 
 	}
 
@@ -55,7 +57,7 @@ public class PersonDaoImp {
 
 	}
 
-	public void detachEntities(Person person) {
+	public void detachEntities(Boss person) {
 
 		EntityManager em = factory.createEntityManager();
 		em.getTransaction().begin();
@@ -68,7 +70,7 @@ public class PersonDaoImp {
 
 	}
 
-	public void contain(Person person1, Person person2) {
+	public void contain(Boss person1, Boss person2) {
 
 		EntityManager em = factory.createEntityManager();
 		em.getTransaction().begin();
@@ -86,7 +88,7 @@ public class PersonDaoImp {
 		em.getTransaction().begin();
 
 		em.clear();
-		Person person = em.find(Person.class, id);
+		Boss person = em.find(Boss.class, id);
 		em.remove(person);
 
 		em.getTransaction().commit();
@@ -94,5 +96,7 @@ public class PersonDaoImp {
 		factory.close();
 
 	}
-
+*/
+	
+	
 }
