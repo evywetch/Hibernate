@@ -21,9 +21,9 @@ public class App {
 		EntityManager em = factory.createEntityManager();
 	
 		
-		em.getTransaction().begin();
+	//	em.getTransaction().begin();
 		
-		
+		/*
 		Boss boss = new Boss("boss2");
 		
 		Dog dog = new Dog("dog3");
@@ -117,7 +117,7 @@ public class App {
 		
 		
 		
-			em.getTransaction().commit();
+		//	em.getTransaction().commit();
 		
 		
 		em.close();
