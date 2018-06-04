@@ -9,6 +9,7 @@ import javax.persistence.Persistence;
 
 import net.codejava.dao.PersonDaoImp;
 import net.codejava.domain.Dog;
+import net.codejava.domain.Address;
 import net.codejava.domain.Boss;
 
 public class App {
@@ -17,9 +18,59 @@ public class App {
 		
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("testHibernate");
 		EntityManager em = factory.createEntityManager();
+	
+		
+	//	em.getTransaction().begin();
+		
+		/*
+		Boss boss = new Boss("boss");
+		
+		Dog dog = new Dog("dog2");
+		List<Dog> dogList = new ArrayList<>();
+		dogList.add(dog);
+		
+		Address address = new Address("street",new Integer(1),"1000AA","Rotterdam");
+		
+		boss.setAddress(address);
+		
+		em.persist(boss);
 		
 		
-		em.getTransaction().begin();
+		
+		/*
+		
+		List<Boss> bossList = new ArrayList();
+		Boss boss = new Boss("boss");
+		bossList.add(boss);
+		
+		Dog dog = new Dog("dog");
+		dog.setBossList(bossList);
+		
+		em.persist(dog);
+		em.persist(boss);
+		
+		
+		*/
+		
+		
+		
+		
+		
+		/*
+		
+		
+		Dog dog = new Dog("dog2");
+		List<Dog> dogList = new ArrayList<>();
+		dogList.add(dog);
+		
+		Boss boss = new Boss("boss2");
+		boss.setDogList(dogList);
+		
+		em.persist(boss);
+	//	em.persist(dog);
+		
+		
+	
 		
 		/*
 		
@@ -42,7 +93,7 @@ public class App {
 		
 		
 		
-		*/
+	
 		
 		em.clear();
 		
@@ -50,14 +101,14 @@ public class App {
 		Boss boss = dog.getBoss();
 		boss.toString();
 		
-		System.out.println(boss.toString());
+	*/
 		
 	
 		
 		
 		
 		
-			em.getTransaction().commit();
+		//	em.getTransaction().commit();
 		
 		
 		em.close();

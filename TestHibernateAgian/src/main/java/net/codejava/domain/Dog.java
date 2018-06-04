@@ -1,6 +1,7 @@
 package net.codejava.domain;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -10,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -19,8 +21,36 @@ import javax.persistence.Table;
 @Table (name = "dog")
 public class Dog implements Serializable{
 	
-	private long id;
+	@Id
+	@Column(name = "dog_id",nullable = false, length = 30)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	
+	@Column(nullable = false, length = 45)
+	private String name;
+	
+	@ManyToMany(mappedBy = "dogList")
+	private List<Boss> bossList;
+	
+	public Dog(String name){
+		this.name = name;
+	}
 
+	
+	public List<Boss> getBossList() {
+		return bossList;
+	}
+
+	public void setBossList(List<Boss> bossList) {
+		this.bossList = bossList;
+	}
+	
+	
+	
+	/*
+								
+	private long id;
+	
 	private Boss boss;
 	
 	
@@ -60,7 +90,7 @@ public class Dog implements Serializable{
 		return this.boss = boss;
 	} 
 
-	*/
+
 	
 	 @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	 @JoinColumn(name = "boss_id")
@@ -78,6 +108,6 @@ public class Dog implements Serializable{
 		return "Dog [id=" + id + ", boss=" + getBoss().toString() + "]";
 	} 
 	
-	
+	*/
 
 }
