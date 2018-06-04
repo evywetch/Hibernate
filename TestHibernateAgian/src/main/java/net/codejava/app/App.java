@@ -10,7 +10,8 @@ import javax.persistence.Persistence;
 import net.codejava.dao.PersonDaoImp;
 import net.codejava.domain.Dog;
 import net.codejava.domain.Address;
-import net.codejava.domain.Boss;
+
+import net.codejava.domain.*;
 
 public class App {
 
@@ -20,21 +21,29 @@ public class App {
 		EntityManager em = factory.createEntityManager();
 	
 		
-	//	em.getTransaction().begin();
+		em.getTransaction().begin();
 		
-		/*
-		Boss boss = new Boss("boss");
 		
-		Dog dog = new Dog("dog2");
+		Boss boss = new Boss("boss2");
+		
+		Dog dog = new Dog("dog3");
 		List<Dog> dogList = new ArrayList<>();
 		dogList.add(dog);
 		
-		Address address = new Address("street",new Integer(1),"1000AA","Rotterdam");
+		Address address = new Address();
+		PostalCode postalCode = new PostalCode();
+		postalCode.setNumber(1111);
+		postalCode.setLetters("AA");
+		address.setStreetName("street1");
+		address.setHouseNumber(11);
+		address.setPostalCode(postalCode);
+		address.setCity("rotterdam");
 		
 		boss.setAddress(address);
+		boss.setDogList(dogList);
 		
 		em.persist(boss);
-		
+		em.persist(dog);
 		
 		
 		/*
@@ -50,8 +59,8 @@ public class App {
 		em.persist(boss);
 		
 		
-		*/
 		
+	
 		
 		
 		
@@ -108,7 +117,7 @@ public class App {
 		
 		
 		
-		//	em.getTransaction().commit();
+			em.getTransaction().commit();
 		
 		
 		em.close();

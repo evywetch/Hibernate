@@ -39,7 +39,7 @@ public class Boss implements Serializable{
 	private List<Dog> dogList;
 	
 	@Embedded()
-	//@Column(nullable = true)
+	@Column(nullable = true)
 	private Address address;
 	
 	
