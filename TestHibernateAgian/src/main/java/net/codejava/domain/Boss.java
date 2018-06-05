@@ -5,6 +5,8 @@ package net.codejava.domain;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
@@ -40,6 +42,9 @@ public class Boss implements Serializable{
 	
 	@Embedded()
 	@Column(nullable = true)
+	
+	@AttributeOverrides({@AttributeOverride(name = "streetName",column = @Column(name = "street_name")),
+		@AttributeOverride(name = "houseNumber",column = @Column(name = "house_number"))})
 	private Address address;
 	
 	
