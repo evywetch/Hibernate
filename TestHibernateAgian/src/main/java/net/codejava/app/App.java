@@ -20,8 +20,20 @@ public class App {
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("testHibernate");
 		EntityManager em = factory.createEntityManager();
 	
-		
 	//	em.getTransaction().begin();
+		
+		/*
+		Terrier terrier = new Terrier();
+		terrier.setName("terrier2");
+		terrier.setAge(3);
+		terrier.setAggressive(true);
+		
+		Cat s = new Shepherd();
+		s.setName("Shepherd2");
+		s.setAge(6);
+		
+		em.persist(terrier);
+		em.persist(s);
 		
 		/*
 		Boss boss = new Boss("boss2");

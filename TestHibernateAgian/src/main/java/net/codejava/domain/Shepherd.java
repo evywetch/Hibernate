@@ -6,19 +6,30 @@ import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Inheritance;
 import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
 @Entity
+@Inheritance
 @Table(name = "shepherd")
 
+/*
+ * 
+ *  When using @Inheritance with Cat class . The column setting using @AssociationOverrides 
+ *  and @AttributeOverrides doesn't work
+ *  
+ *  
 @AssociationOverrides({@AssociationOverride(name = "boss",joinColumns = @JoinColumn(name = "s_boss_id"))})
 @AttributeOverrides({@AttributeOverride(name = "id" ,column = @Column(name="shepherd_id")) ,
 	 @AttributeOverride(name = "name",column = @Column(name="shepherd_name"))})
 
-
+*/
 
 public class Shepherd extends Cat {
+	
+	
+
 	
 public Shepherd(){
 		
