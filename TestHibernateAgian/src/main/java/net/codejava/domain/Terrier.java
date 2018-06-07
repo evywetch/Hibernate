@@ -11,6 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
 @Entity
+// use @Inheritance insubclass to provide the correct mapping information
 @Inheritance
 @Table(name = "terrier")
 
@@ -27,16 +28,18 @@ import javax.persistence.Table;
 
 public class Terrier extends Cat{
 	
-//	private boolean aggressive;
+	private boolean aggressive ;
 	
 	public Terrier(){
 		
 	}
 	
-	public Terrier(String name,Integer age){
-		
+	public Terrier(String name,Integer age,boolean aggressive){
+		this.name = name;
+		this.age = age;
+		this.aggressive = aggressive;
 	}
-/*
+
 	public boolean isAggressive() {
 		return aggressive;
 	}
@@ -44,8 +47,9 @@ public class Terrier extends Cat{
 	public void setAggressive(boolean aggressive) {
 		this.aggressive = aggressive;
 	}
+
 	
-*/	
+
 	
 	
 

@@ -22,7 +22,9 @@ import javax.persistence.InheritanceType;
  *
  *Add @Inheritance in this class makes the classes that extends this class inherit properties of this class
  *
- *@Inheritance (strategy = InheritanceType.TABLE_PER_CLASS) = the superclass, subclasses will hv their own table.
+ *@Inheritance (strategy = InheritanceType.TABLE_PER_CLASS) = the superclass, subclasses will hv their own table with all field as Cat.
+ *						 =  every table shares id generation together
+ *						 = So , Can't use @GeneratedValue(strategy = GenerationType.IDENTITY)
  *
  *@Inheritance (strategy = InheritanceType.JOINED) = Terrier and Shepherd only have id column
  *						 = Cat will have id,name,age column. 
@@ -36,7 +38,7 @@ import javax.persistence.InheritanceType;
 
 @Entity
 @Inheritance (strategy = InheritanceType.JOINED)
-@Table(name = "cat")
+//@Table(name = "cat")
 public class Cat {
 
 	protected long id;
@@ -44,8 +46,14 @@ public class Cat {
 	protected Integer age;
 //	protected Boss boss;
 	
+	
+	
+	public Cat(){
+		
+	}
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//@GeneratedValue(strategy = GenerationType.TABLE)
 	public long getId() {
 		return id;
 	}

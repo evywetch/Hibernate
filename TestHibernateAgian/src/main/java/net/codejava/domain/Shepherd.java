@@ -29,14 +29,28 @@ import javax.persistence.Table;
 public class Shepherd extends Cat {
 	
 	
-
+private boolean aggressive ;
 	
 public Shepherd(){
 		
 	}
 	
-public Shepherd(String name,Integer age){
+public Shepherd(String name,Integer age,boolean aggressive){
 		
+	this.name = name;
+	this.age = age;
+	this.aggressive = aggressive;
+	
 	}
+
+public boolean isAggressive() {
+	return aggressive;
+}
+
+public void setAggressive(boolean aggressive) {
+	this.aggressive = aggressive;
+}
+
+
 
 }
